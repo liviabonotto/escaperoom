@@ -1,19 +1,19 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CountdownTimer : MonoBehaviour
 {
-    public float countdownTime = 600f; // 10 minutos em segundos
-    public Text countdownText; // Texto UI para exibir o tempo (opcional)
-    public AudioSource voiceClip; // Referência ao áudio (opcional)
-    
+    public float countdownTime = 600f; 
+    public TextMeshPro countdownText; 
+    public AudioSource voiceClip;  
     private bool isCountingDown = false;
 
     void Start()
     {
-        StartCountdown();
+        FindObjectOfType<AudioManager>().Play("tema");
+        StartCoroutine(TriggerEventWithDelay(CountdownEvent.Narracao1, 3f));
     }
 
     public void StartCountdown()
@@ -25,61 +25,94 @@ public class CountdownTimer : MonoBehaviour
         }
     }
 
+    IEnumerator TriggerEventWithDelay(CountdownEvent countdownEvent, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        TriggerEvent(countdownEvent);
+    }
+
+    private IEnumerator QuitGame()
+{
+    yield return new WaitForSeconds(2f);
+    
+    Application.Quit();
+
+    #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+    #endif
+}
+
+
+    public enum CountdownEvent
+    {
+        Narracao1,
+        Relogio,
+        FimCountdown,
+        Countdown,
+        PersonagemLevanta
+    }
+
     private IEnumerator CountdownCoroutine()
     {
         float remainingTime = countdownTime;
 
         while (remainingTime > 0)
         {
-            // Atualiza o texto, se aplicável
             if (countdownText != null)
             {
                 countdownText.text = FormatTime(remainingTime);
             }
 
-            // Eventos personalizados (exemplo: voz em determinados minutos)
-            if (Mathf.Approximately(remainingTime, 595f)) // Faltam 5 minutos
-            {
-                TriggerEvent("Faltam 5 minutos!", 0);
-            }
-            else if (Mathf.Approximately(remainingTime, 60f)) // Faltam 1 minuto
-            {
-                TriggerEvent("Falta 1 minuto!", 2);
-            }
-
-            // Aguarda 1 segundo
             yield return new WaitForSeconds(1f);
 
-            // Decrementa o tempo restante
             remainingTime--;
         }
 
-        // Countdown terminou
         CountdownFinished();
     }
 
-    private void TriggerEvent(string message, int newEvent)
+    private void TriggerEvent(CountdownEvent countdownEvent)
     {
-        var _event = newEvent;
-        if (_event == 0)
+        switch (countdownEvent)
         {
-            if (voiceClip != null && !voiceClip.isPlaying)
-            {
-                voiceClip.Play();
-            }
+            case CountdownEvent.Narracao1:
+                FindObjectOfType<AudioManager>().Play("narracao-1");
+                StartCoroutine(TriggerEventWithDelay(CountdownEvent.Countdown, 6f));
+                StartCoroutine(TriggerEventWithDelay(CountdownEvent.Relogio, 5f));
+                break;
+
+            case CountdownEvent.Countdown:
+                StartCountdown();
+                break;
+
+            case CountdownEvent.Relogio:
+                FindObjectOfType<AudioManager>().Play("relogio");
+                StartCoroutine(TriggerEventWithDelay(CountdownEvent.PersonagemLevanta, 10f));
+                break;
+
+            case CountdownEvent.PersonagemLevanta:
+                FindObjectOfType<AudioManager>().Play("personagem-levanta");
+                break;
+
+
+            case CountdownEvent.FimCountdown:
+                Debug.Log("Evento final executado.");
+                break;
         }
     }
 
     private void CountdownFinished()
-    {
-        Debug.Log("Countdown terminado!");
-        if (countdownText != null)
-        {
-            countdownText.text = "Tempo Esgotado!";
-        }
+{
+    Debug.Log("Countdown terminado!");
 
-        // Adicione lógica adicional aqui, como iniciar outro evento
+    if (countdownText != null)
+    {
+        countdownText.text = "Game Over";
     }
+
+    StartCoroutine(QuitGame());
+}
+
 
     private string FormatTime(float time)
     {

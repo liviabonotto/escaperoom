@@ -154,4 +154,5 @@ public class PaperSlotManager : MonoBehaviour
         Debug.Log("Todos os IDs de slots estão corretos!"); // Log de confirmação
         return true; // Todos os slots estão corretos
     }
+
 }
