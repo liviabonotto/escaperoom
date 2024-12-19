@@ -6,7 +6,7 @@ using TMPro;
 public class CountdownTimer : MonoBehaviour
 {
     public float countdownTime = 600f; 
-    public TextMeshPro countdownText; 
+    public TextMeshProUGUI countdownText; 
     public AudioSource voiceClip;  
     private bool isCountingDown = false;
 
