@@ -18,7 +18,7 @@ public class KeyInteraction : MonoBehaviour
     public void StartGame()
     {
         // É AQUI QUE REFERENCIAMOS A CENA!!!!!!
-        SceneTransitionManager.singleton.GoToSceneAsync(0); 
+        SceneTransitionManager.singleton.GoToSceneAsync(2); 
         Debug.Log("Porta aberta!");
     }
 
