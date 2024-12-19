@@ -1,0 +1,11 @@
+Model Information:
+* title:	Pen
+* source:	https://sketchfab.com/3d-models/pen-3c7baca778e44bc0b50d6cff6ce05d5c
+* author:	tathagatamishra (https://sketchfab.com/tathagatamishra007)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Pen" (https://sketchfab.com/3d-models/pen-3c7baca778e44bc0b50d6cff6ce05d5c) by tathagatamishra (https://sketchfab.com/tathagatamishra007) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

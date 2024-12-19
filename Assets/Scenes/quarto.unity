@@ -15322,6 +15322,16 @@ PrefabInstance:
       propertyPath: m_ScaleInLightmap
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8591987239158557466, guid: beef3bcde1610f04aa96275436147bb9,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591987239158557466, guid: beef3bcde1610f04aa96275436147bb9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9784176b761b857469f9789c8782e875, type: 2}
     - target: {fileID: 8601881819374322522, guid: beef3bcde1610f04aa96275436147bb9,
         type: 3}
       propertyPath: m_LocalPosition.x
