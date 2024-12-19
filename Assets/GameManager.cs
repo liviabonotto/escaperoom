@@ -49,6 +49,7 @@ public class CountdownTimer : MonoBehaviour
         Relogio,
         FimCountdown,
         Countdown,
+        Passos,
         PersonagemLevanta
     }
 
@@ -61,6 +62,11 @@ public class CountdownTimer : MonoBehaviour
             if (countdownText != null)
             {
                 countdownText.text = FormatTime(remainingTime);
+            }
+
+            if (Mathf.Approximately(remainingTime, 300f)) // Faltam 5 minutos
+            {
+                TriggerEvent(CountdownEvent.Passos);
             }
 
             yield return new WaitForSeconds(1f);
@@ -94,6 +100,9 @@ public class CountdownTimer : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("personagem-levanta");
                 break;
 
+            case CountdownEvent.Passos:
+                FindObjectOfType<AudioManager>().Play("personagem-levanta");
+                break;
 
             case CountdownEvent.FimCountdown:
                 Debug.Log("Evento final executado.");
