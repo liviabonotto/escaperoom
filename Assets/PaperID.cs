@@ -32,7 +32,7 @@ public class PaperID : MonoBehaviour
     {
         switch (paperID)
         {
-            case 1: // ID do papel da cabeça
+            case 4: // ID do papel da cabeça
                 FindObjectOfType<AudioManager>().Play("SomCabeca");
                 break;
             case 2: // ID do papel do abdômen

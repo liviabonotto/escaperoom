@@ -4299,13 +4299,13 @@ MonoBehaviour:
   sounds:
   - name: tema
     clip: {fileID: 8300000, guid: 3f76ff273804a604693970243779f2a5, type: 3}
-    volume: 0.5
+    volume: 0.831
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: narracao-1
     clip: {fileID: 8300000, guid: 9be36c154eeeb6145833af1dbee9aa11, type: 3}
-    volume: 0.203
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -4317,13 +4317,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: personagem-levanta
     clip: {fileID: 8300000, guid: 9dea3918d223c644b9df78a7791b62ea, type: 3}
-    volume: 0.203
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: "SomCabe\xE7a"
+  - name: SomCabeca
     clip: {fileID: 8300000, guid: 2912d55639333e24695994297a2b2c92, type: 3}
-    volume: 0.203
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -10211,7 +10211,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 1
   m_LastSelectExited:
     m_PersistentCalls:
       m_Calls: []
