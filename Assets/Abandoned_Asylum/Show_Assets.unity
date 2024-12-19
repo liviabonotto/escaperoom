@@ -712,7 +712,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 33088594513469295}
+        m_TargetAssemblyTypeName: PaperInteractionManager, Assembly-CSharp
+        m_MethodName: OnPaperPickedUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -2812,7 +2824,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386305501}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c282b23719c6894096dcef918fd684e, type: 3}
   m_Name: 
@@ -3037,7 +3049,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 396339941}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &581932187
+--- !u!1 &509320389
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3045,53 +3057,61 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 581932190}
-  - component: {fileID: 581932189}
-  - component: {fileID: 581932188}
+  - component: {fileID: 509320391}
+  - component: {fileID: 509320390}
   m_Layer: 0
-  m_Name: AR Session
+  m_Name: VideoPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &581932188
-MonoBehaviour:
+--- !u!328 &509320390
+VideoPlayer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581932187}
+  m_GameObject: {fileID: 509320389}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa850fbd5b8aded44846f96e35f1a9f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &581932189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581932187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3859a92a05d4f5d418cb6ca605290e74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AttemptUpdate: 1
-  m_MatchFrameRate: 1
-  m_TrackingMode: 2
---- !u!4 &581932190
+  m_VideoClip: {fileID: 32900000, guid: 6fb652ddeea5f12468063f5714fdf7bd, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 297427832}
+  m_TargetTexture: {fileID: 0}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: <noninit>
+  m_RenderMode: 1
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_TimeUpdateMode: 2
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 0
+  m_SkipOnDrop: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
+--- !u!4 &509320391
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581932187}
+  m_GameObject: {fileID: 509320389}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -52.100594, y: -73.218864, z: -101.33026}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 24.28, y: 1.442, z: -18.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5856,7 +5876,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1695707703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5893,6 +5913,12 @@ MonoBehaviour:
     volume: 0.877
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: VozPapel
+    clip: {fileID: 8300000, guid: 895bef199aad4114f96ff625f6f43574, type: 3}
+    volume: 0.877
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
 --- !u!4 &1695707704
 Transform:
@@ -6610,19 +6636,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1801278662922900}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71b96335ed88e474bb7ce4ad5734b9de, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b5f13b3193d60e408c54c6ddcf08c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passthroughController: {fileID: 1880946198}
-  delayBeforeTransition: 20
+  audioManager: {fileID: 1695707703}
+  narrationClipName: VozPapel
+  videoPlayerObject: {fileID: 509320389}
+  delayForCredits: 30
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 301758535}
   - {fileID: 198809255}
-  - {fileID: 581932190}
   - {fileID: 1880946199}
   - {fileID: 396339941}
   - {fileID: 1691278231}
+  - {fileID: 509320391}
   - {fileID: 1695707704}

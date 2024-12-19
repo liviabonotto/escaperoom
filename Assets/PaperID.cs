@@ -48,7 +48,7 @@ public class PaperID : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("SomBracoDireito");
                 break;
             case 7: // ID do papel das pernas
-                FindObjectOfType<AudioManager>().Play("SomPes");
+                FindObjectOfType<AudioManager>().Play("Vozes");
                 break;
             case 6: // ID do papel das pernas
                 FindObjectOfType<AudioManager>().Play("SomPernas");
